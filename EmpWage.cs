@@ -14,19 +14,26 @@ namespace EmpWageCalculation
         public static void empcheck()
         {
 
-            int isPresent = 1;
+            int isFullTime = 1;
+            int EMP_WAGE_PER_HOUR = 20;
+            int Emp_Daily_hour;
             Random r = new Random();
+            
             int check = r.Next(2);
 
-            if (check == isPresent)
+            if (check == isFullTime)
             {
                 Console.WriteLine("Employee is Present");
+                Emp_Daily_hour = 8;
             }
             else
             {
                 Console.WriteLine("Employee is Absent");
+                Emp_Daily_hour = 0;
             }
 
+            int DailyWage = EMP_WAGE_PER_HOUR * Emp_Daily_hour;
+            Console.WriteLine($"Emp daily wage is: {DailyWage}");
         }
 
     }

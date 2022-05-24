@@ -14,22 +14,29 @@ namespace EmpWageCalculation
         public static void empcheck()
         {
 
-            int isFullTime = 1;
+            int IS_FULL_TIME = 1;
+            int IS_PART_TIME = 2;
+
             int EMP_WAGE_PER_HOUR = 20;
             int Emp_Daily_hour;
             Random r = new Random();
             
-            int check = r.Next(2);
+            int check = r.Next(3);
 
-            if (check == isFullTime)
+            if (check == IS_FULL_TIME)
             {
                 Console.WriteLine("Employee is Present");
                 Emp_Daily_hour = 8;
             }
+            else if(check == IS_PART_TIME)
+            {
+                Console.WriteLine("Employee is Part time");
+                Emp_Daily_hour = 4;
+            }
             else
             {
                 Console.WriteLine("Employee is Absent");
-                Emp_Daily_hour = 0;
+                Emp_Daily_hour=0;
             }
 
             int DailyWage = EMP_WAGE_PER_HOUR * Emp_Daily_hour;
